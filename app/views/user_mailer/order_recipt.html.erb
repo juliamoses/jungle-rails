@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for shopping with us!</h1>
+
+    <h2>Here is a review of your ordered items:</h2>
+      <% @order.line_items.each do |item| %>
+      <li>Product ID:<%= item.product_id %></li>
+      <li>Product Total: <%= item.total_price %></li>
+    <% end %>
+  </body>
+</html>
