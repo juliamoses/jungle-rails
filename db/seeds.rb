@@ -132,5 +132,60 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+
+puts "Re-creating Users ..."
+
+
+User.destroy_all
+
+user1 = User.create!({
+  password:"test1",
+  email: "test1@email.com"
+})
+
+user2 = User.create!({
+  password:"test2",
+  email: "test2@email.com"
+})
+
+user3 = User.create!({
+  password:"test3",
+  email: "test3@email.com"
+})
+
+
+
+## REVIEWS
+
+puts "Re-creating Reviews ..."
+
+prod1 = Product.find_by! id: user1[:id]
+prod2 = Product.find_by! id: user2[:id]
+prod3 = Product.find_by! id: user3[:id]
+
+Review.destroy_all
+
+prod1.reviews.create!({
+  product_id: 1,
+  user_id: user1[:id],
+  description: "Quite literally the best product I have used in my life",
+  rating: 5,
+})
+
+prod2.reviews.create!({
+  product_id: 2,
+  user_id: user2[:id],
+  description: "Wow, this has only changed my life for the better",
+  rating: 4,
+})
+
+prod3.reviews.create!({
+  product_id: 3,
+  user_id: user3[:id],
+  description: "The moment I opened the box, I started getting hives, they dont even have a refund policy!!",
+  rating: 1,
+})
+
 
 puts "DONE!"
