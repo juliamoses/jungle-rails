@@ -3,8 +3,8 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 
-!["Jungle home page"]()
-!["Jungle product page"]()
+!["Jungle home page"](https://github.com/juliamoses/jungle-rails/blob/feature/readme/docs/jungle-home.jpg.png?raw=true)
+!["Jungle product page"](https://github.com/juliamoses/jungle-rails/blob/feature/readme/docs/jungle-reviews.jpg.png?raw=true)
 
 
 
