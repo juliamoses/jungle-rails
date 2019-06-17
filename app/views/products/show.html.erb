@@ -22,11 +22,32 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-          <dt>Review</dt>
-          <dd><%= @product.reviews %></dd>
+     <!-- <dt>Review</dt> -->
+    <!--  <dd><%= @product.reviews %></dd> -->
         </dl>
       </div>
     </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @product.reviews.reverse.each do |review| %>
+        <tr>
+            <td> <%=User.find(review.user_id).email %> </td>
+            <td> <%=review.description %> </td>
+            <td> <%=review.rating%> </td>
+        </tr>
+
+      <% end %>
+    </tbody>
+    </table>
 
   </article>
 

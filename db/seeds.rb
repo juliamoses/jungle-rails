@@ -146,7 +146,7 @@ user1 = User.create!({
 
 user2 = User.create!({
   password:"test2",
-  email: "test2@email.com"
+  email: "karen_loves_zebra@email.com"
 })
 
 user3 = User.create!({
@@ -185,6 +185,13 @@ prod3.reviews.create!({
   user_id: user3[:id],
   description: "The moment I opened the box, I started getting hives, they dont even have a refund policy!!",
   rating: 1,
+})
+
+prod3.reviews.create!({
+  product_id: 4,
+  user_id: user4[:id],
+  description: "My favorite thing",
+  rating: 4.5,
 })
 
 
