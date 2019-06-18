@@ -22,11 +22,10 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-     <!-- <dt>Review</dt> -->
-    <!--  <dd><%= @product.reviews %></dd> -->
         </dl>
       </div>
     </div>
+
 
     <table class="table table-bordered">
       <thead>
@@ -49,6 +48,16 @@
     </tbody>
     </table>
 
-  </article>
 
+    <div class="row">
+    <%= form_for [@product, @review], url: `/products/#{@product.id}/reviews` do |f| %>
+      <h4>RATINGS</h4>
+      <%= f.text_area :description %>
+      <%= f.select :rating, [1, 2, 3, 4, 5]%>
+      <%= f.submit "Create" %>
+    <% end %>
+    </div>
+
+
+  </article>
 </section>
